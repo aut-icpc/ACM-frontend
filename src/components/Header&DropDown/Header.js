@@ -1,5 +1,5 @@
 import React from "react" 
-import "./styles/header-style.css"
+import "../styles/header-style.css"
 import { NavLink } from 'react-router-dom'
 import DropDown from "./DropDown"
 
@@ -52,14 +52,13 @@ class Header extends React.Component {
                       <NavLink onClick={() => window.scrollTo(0, 0)} className="nav-link" exact to="/PastResult">Past Results</NavLink>
                       <NavLink onClick={() => window.scrollTo(0, 0)} className="nav-link" exact to="/Register">Register</NavLink>
                       <NavLink onClick={() => window.scrollTo(0, 0)} className="nav-link" exact to="/">Home</NavLink>
-                      
                   </div>
 
                   <div className ="option">
                       <DropDown/>
                   </div>
 
-                  <img src= {require("./../img/header-logo.png")} height="55" width = "170" onClick={this.logoClickHandler}/>
+                  <img src= {require("./../../img/header-logo.png")} height="55" width = "170" onClick={this.logoClickHandler}/>
               </div>
             </div>
         </div>

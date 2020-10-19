@@ -1,8 +1,8 @@
 import React from "react"
-import Gallery from "./Gallery";
+import Gallery from "./Gallery/Gallery";
 import axios from "axios"
 import PastContestLinkCard from './PastContestLinkCard'
-import "./styles/past-contest.css"
+import "../../styles/past-contest.css"
 
 class PastContest extends React.Component { 
     constructor(){
@@ -43,7 +43,8 @@ class PastContest extends React.Component {
     }
 
     fetchContests = () => {
-        axios.get(process.env.REACT_APP_URL+"/api/contests/"+this.props.data.year ).then(res => {
+        console.log(process.env.REACT_APP_URL+"/api/contests/"+this.props.data.year)
+        axios.get(process.env.REACT_APP_URL+"/api/contests/"+this.props.data.year).then(res => {
             this.setState({
                 allImages: res.data.galleries , 
                 isFetched : true
@@ -99,16 +100,22 @@ class PastContest extends React.Component {
             <div className = "past-contest-container">
                 <div className = "sher-box-container">
                     <div className="contest-row">
-                        <div className = "column" onClick={()=>{if(this.props.data.final_ranking_online=="#"){alert("The onLine scoreboard is not available")}}}><PastContestLinkCard  title ="Online ScoreBoard" url={require("./../img/scoreboard.svg")} link= {this.props.data.final_ranking_online} /></div>
-                        <div className = "column"><PastContestLinkCard  title ="Problems" url={require("./../img/question.svg")} link= {this.props.data.problems} /></div>
-                        <div className = "column" onClick={()=>{if(this.props.data.final_ranking_onsite === "#"){alert("The onSite scoreboard is not available")}}}><PastContestLinkCard  title ="Onsite ScoreBoard" url={require("./../img/scoreboard.svg")} link= {this.props.data.final_ranking_onsite} /></div>
+                        {/*three card at header*/}
+                        <div className = "column" onClick={()=>{if(this.props.data.final_ranking_online==="#"){alert("The onLine scoreboard is not available")}}}>
+                            <PastContestLinkCard  title ="Online ScoreBoard" url={require("../../../img/scoreboard.svg")}
+                                                  link= {this.props.data.final_ranking_online} /></div>
+                        <div className = "column">
+                            <PastContestLinkCard  title ="Problems" url={require("../../../img/question.svg")}
+                                                  link= {this.props.data.problems} /></div>
+                        <div className = "column" onClick={()=>{if(this.props.data.final_ranking_onsite === "#"){alert("The onSite scoreboard is not available")}}}>
+                            <PastContestLinkCard  title ="Onsite ScoreBoard" url={require("../../../img/scoreboard.svg")}
+                                                  link= {this.props.data.final_ranking_onsite} /></div>
                     </div>
                 </div>
 
                 <div className="photo-wall">
                     <Gallery images = {[].concat(this.state.other).concat(this.state.teams).concat(this.state.staffs)} staffs = {this.state.staffs} other = {this.state.other} teams = {this.state.teams}/>
                 </div>
-                <h1></h1>
                 
             </div>
         )

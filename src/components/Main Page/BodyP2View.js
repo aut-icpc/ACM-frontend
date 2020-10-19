@@ -25,7 +25,7 @@ class BodyP2View extends React.Component {
             return <div/>
         }
         return (
-            <BodyP2 data={this.state.countdowns}></BodyP2>
+            <BodyP2 data={this.state.countdowns}/>
         )
     }
 }

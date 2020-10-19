@@ -1,5 +1,5 @@
 import React from 'react'
-import "./styles/gallery.css"
+import "../../../../styles/gallery.css"
 class Photo extends React.Component { 
     constructor() { 
         super() 
@@ -37,7 +37,10 @@ class Photo extends React.Component {
     render() {
         return (
            
-                <img style={this.state.style} className = "photos"  src = {process.env.REACT_APP_URL+ this.props.thumbnail}  onMouseEnter = {this.active} onMouseLeave = {this.disable} />
+                <img style={this.state.style} className = "photos"
+                     src = {process.env.REACT_APP_URL+ this.props.thumbnail}
+                     alt="thumbnail"
+                     onMouseEnter = {this.active} onMouseLeave = {this.disable} />
            
         )
     }

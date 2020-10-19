@@ -1,5 +1,5 @@
 import React from "react"
-import "./styles/past-contest-link-card.css"
+import "../../styles/past-contest-link-card.css"
 
 
 class PastContestLinkCard extends React.Component { 
@@ -18,7 +18,7 @@ class PastContestLinkCard extends React.Component {
             <div >
                 
                 <div className = "link-card-container" onClick={this.change}>
-                    <img src={this.props.url} width ="130" height="130" />
+                    <img src={this.props.url} width ="130" height="130" alt="link-card"/>
                     <a  target="_blank">
                          <h1>{this.props.title}</h1>
                     </a>

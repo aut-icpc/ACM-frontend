@@ -33,6 +33,7 @@ class BodyP4 extends React.Component {
                         <img 
                             src={process.env.REACT_APP_URL + this.state.poster} 
                             width="300" height="400"
+                            alt="poster"
                         />
                 </div>
                 <div className="part4-inner-container">
@@ -43,6 +44,7 @@ class BodyP4 extends React.Component {
                             <img 
                                 src={process.env.REACT_APP_URL + this.state.sponsor} 
                                 width ="250" height="250"
+                                alt="sponsor"
                             />
                         </div>
                     </div>

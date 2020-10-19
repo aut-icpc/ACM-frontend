@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles/poster.css"
+import "../../styles/poster.css"
 import { NavLink } from 'react-router-dom'
 
 
@@ -48,16 +48,18 @@ class Poster extends React.Component {
         
         return (
             <NavLink onClick={() => window.scrollTo(0, 0)}  exact to="/PastContest">
-                <div className = "paper-container" style={this.state.styles} onClick={this.clickHandler} onMouseEnter = {this.hoverHandler} onMouseLeave = {this.unHoverHandler}>
+                <div className = "paper-container" style={this.state.styles}
+                     onClick={this.clickHandler}
+                     onMouseEnter = {this.hoverHandler}
+                     onMouseLeave = {this.unHoverHandler}>
                     <div className = "paper">
                         <img
                         className= "poster-image" 
                         src = {this.props.contest.poster}
                         />
                         <div className= "darker-container">
-                        <div className = "poster-darker"></div>
+                        <div className = "poster-darker"/>
                         </div>
-                        
                         <div className="poster-year">
                             {this.props.contest.year}
                         </div>

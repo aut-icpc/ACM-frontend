@@ -16,26 +16,27 @@ class About extends React.Component {
                                 <img 
                                     src={require("./../../img/ssc-logo.png")} 
                                     width="300" height="85"
+                                    alt="ssc-logo"
                                 />
                             </a>
                             <div className="icons">
                                 <div className="social_icon_div">
-                                    <a href="mailto:ceit.ssc94@gmail.com" target="_blank">
+                                    <a href="mailto:ceit.ssc94@gmail.com" target="_blank"  rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faGoogle} size="2x" className="social_icon"/>
                                     </a>
                                 </div>
                                 <div className="social_icon_div">
-                                    <a href="https://t.me/ceit_ssc" target="_blank">
+                                    <a href="https://t.me/ceit_ssc" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faTelegram} size="2x" className="social_icon"/>
                                     </a>
                                 </div>
                                 <div className="social_icon_div">
-                                    <a href="https://twitter.com/ceit_ssc" target="_blank">
+                                    <a href="https://twitter.com/ceit_ssc" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faTwitter} size="2x" className="social_icon"/>
                                     </a>
                                 </div>
                                 <div className="social_icon_div">
-                                    <a href="https://instagram.com/ceit_ssc" target="_blank">
+                                    <a href="https://instagram.com/ceit_ssc" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faInstagram} size="2x" className="social_icon"/>
                                     </a>
                                 </div>

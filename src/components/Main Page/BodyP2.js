@@ -43,7 +43,7 @@ class BodyP2 extends React.Component {
                         src={ require("./../../img/bottomImage.JPG") } 
                         height="800" width="100%"
                     />
-                    <div className = "dark-layer"></div>                
+                    <div className = "dark-layer"/>
                     <p className = "timer-text">Contest starts in</p>
                     <NavLink exact to="/Register">
                         <p onClick={() => window.scrollTo(0, 0)}  
@@ -56,7 +56,7 @@ class BodyP2 extends React.Component {
                         </p>
                     </NavLink>
                     <div className ="timer">  
-                        <div id="flipdown" className="flipdown"></div>  
+                        <div id="flipdown" className="flipdown"/>
                     </div>
                 </div>
             </div>

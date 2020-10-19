@@ -2,8 +2,8 @@ import React from "react"
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react'
 import background from "./../../../img/patern.jpg"
 
-var HtmlToReactParser = require('html-to-react').Parser;
-var parser = new HtmlToReactParser()
+let HtmlToReactParser = require('html-to-react').Parser;
+let parser = new HtmlToReactParser()
 
 class TimelineContainer extends React.Component{
     render() {

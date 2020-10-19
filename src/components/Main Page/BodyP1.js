@@ -19,15 +19,17 @@ class BodyP1 extends React.Component {
                         className="blur-image" 
                         src ={require("./../../img/topImage.JPG")} 
                         width="100%" height={height}
+                        alt="topImage"
                     />
-                    <div className="dark-layer"></div>
+                    <div className="dark-layer"/>
                     <div className="banner-container">
-                        <img className="banner1" src ={require("./../../img/banner.png")} />
+                        <img className="banner1" src ={require("./../../img/banner.png")} alt="banner1"/>
                     </div>
                     <div className="banner-container">
                         <img 
                             className="banner2" 
-                            src={require("./../../img/banner2.png")}  
+                            src={require("./../../img/banner2.png")}
+                            alt="banner-container"
                         />
                     </div>
                 </div>

@@ -66,11 +66,9 @@ export default class RegisterMenu extends React.Component {
             <div className="menu-container">
                 <div className="card-container" >
                     <NavLink className="nav-link"
-                        onClick={() => 
-                            alert("On-Site Registration has been Closed! You can register in Online contest.")
-                        }  
-                        // onClick={() => window.scrollTo(0, 0)}  
-                        // exact to="/onsiteRegister"
+                        //onClick={() => alert("On-Site Registration has been Closed! You can register in Online contest.")}
+                         onClick={() => window.scrollTo(0, 0)}
+                         exact to="/onsiteRegister"
                     >
                         <div className ="register-card"
                             onMouseEnter={this.onhover2} 
@@ -80,6 +78,7 @@ export default class RegisterMenu extends React.Component {
                             <div className="card-image">
                                 <img src={require("./../../img/onsite.svg")}
                                     width="200" height="200"
+                                     alt="onsite"
                                 />
                             </div>  
                             <div className="card-text">
@@ -90,11 +89,9 @@ export default class RegisterMenu extends React.Component {
                         </div>
                     </NavLink>
                     <NavLink className="nav-link"
-                        onClick={() => 
-                            alert("Registration has been Closed!")
-                        } 
-                        // onClick={() => window.scrollTo(0, 0)} 
-                        // exact to="/onlineRegister"
+                     //   onClick={() => alert("Registration has been Closed!")//   }
+                        onClick={() => window.scrollTo(0, 0)}
+                        exact to="/onlineRegister"
                     >
                         <div className ="register-card"
                             style={this.state.style1} 
@@ -103,7 +100,8 @@ export default class RegisterMenu extends React.Component {
                         >
                             <div className="card-image">
                                 <img 
-                                    src={require("./../../img/online.svg")} 
+                                    src={require("./../../img/online.svg")}
+                                    alt="online"
                                     width="200" height="200"/>
                             </div>
                             <div className="card-text">

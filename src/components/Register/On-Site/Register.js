@@ -202,35 +202,35 @@ class Register extends React.Component {
                 this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.email_1 == this.state.email_2 || 
-                this.state.email_1 == this.state.email_3 || 
-                this.state.email_3 == this.state.email_2) {
+            if(this.state.email_1 === this.state.email_2 ||
+                this.state.email_1 === this.state.email_3 ||
+                this.state.email_3 === this.state.email_2) {
                 this.duplication_error_string += "\nYou have entered duplicate Email!"
                 this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.student_number_1 == this.state.student_number_2 || 
-                this.state.student_number_1 == this.state.student_number_3 || 
-                this.state.student_number_2 == this.state.student_number_3) {
+            if(this.state.student_number_1 === this.state.student_number_2 ||
+                this.state.student_number_1 === this.state.student_number_3 ||
+                this.state.student_number_2 === this.state.student_number_3) {
                     this.duplication_error_string += "\nYou have entered duplicate Student Number!"
                     this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.phone_number_1 == this.state.phone_number_2 || 
-                this.state.phone_number_1 == this.state.phone_number_3 || 
-                this.state.phone_number_2 == this.state.phone_number_3) {
+            if(this.state.phone_number_1 === this.state.phone_number_2 ||
+                this.state.phone_number_1 === this.state.phone_number_3 ||
+                this.state.phone_number_2 === this.state.phone_number_3) {
                     this.duplication_error_string += "\nYou have entered duplicate Phone Number!"
                     this.duplication_error_string_alert = "1"
             }
 
 
-            if(this.state.team_name == "") {
+            if(this.state.team_name === "") {
                 this.setState({
                     team_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.institution == "") {
+            if(this.state.institution === "") {
                 this.setState({
                     institution_error: "error",
                 })
@@ -238,49 +238,49 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_1 == "") {
+            if(this.state.first_name_1 === "") {
                 this.setState({
                     first_name_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_1 == "") {
+            if(this.state.last_name_1 === "") {
                 this.setState({
                     last_name_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_1 == "") {
+            if(this.state.gender_1 === "") {
                 this.setState({
                     gender_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_1 == "") {
+            if(this.state.shirt_size_1 === "") {
                 this.setState({
                     shirt_size_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_1 == "") {
+            if(this.state.edu_level_1 === "") {
                 this.setState({
                     edu_level_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_1 == "") {
+            if(this.state.student_number_1 === "") {
                 this.setState({
                     student_number_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_1 == "") {
+            if(this.state.email_1 === "") {
                 this.setState({
                     email_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_1 == "") {
+            if(this.state.phone_number_1 === "") {
                 this.setState({
                     phone_number_1_error: "error",
                 })
@@ -288,49 +288,49 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_2 == "") {
+            if(this.state.first_name_2 === "") {
                 this.setState({
                     first_name_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_2 == "") {
+            if(this.state.last_name_2 === "") {
                 this.setState({
                     last_name_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_2 == "") {
+            if(this.state.gender_2 === "") {
                 this.setState({
                     gender_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_2 == "") {
+            if(this.state.shirt_size_2 === "") {
                 this.setState({
                     shirt_size_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_2 == "") {
+            if(this.state.edu_level_2 === "") {
                 this.setState({
                     edu_level_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_2 == "") {
+            if(this.state.student_number_2 === "") {
                 this.setState({
                     student_number_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_2 == "") {
+            if(this.state.email_2 === "") {
                 this.setState({
                     email_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_2 == "") {
+            if(this.state.phone_number_2 === "") {
                 this.setState({
                     phone_number_2_error: "error",
                 })
@@ -338,59 +338,59 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_3 == "") {
+            if(this.state.first_name_3 === "") {
                 this.setState({
                     first_name_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_3 == "") {
+            if(this.state.last_name_3 === "") {
                 this.setState({
                     last_name_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_3 == "") {
+            if(this.state.gender_3 === "") {
                 this.setState({
                     gender_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_3 == "") {
+            if(this.state.shirt_size_3 === "") {
                 this.setState({
                     shirt_size_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_3 == "") {
+            if(this.state.edu_level_3 === "") {
                 this.setState({
                     edu_level_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_3 == "") {
+            if(this.state.student_number_3 === "") {
                 this.setState({
                     student_number_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_3 == "") {
+            if(this.state.email_3 === "") {
                 this.setState({
                     email_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_3 == "") {
+            if(this.state.phone_number_3 === "") {
                 this.setState({
                     phone_number_3_error: "error",
                 })
                 this.field_alert = "1"
             }
 
-            if(this.field_alert == "1") {
+            if(this.field_alert === "1") {
                 alert("Please fill empty fields!")
             }
-            else if(this.duplication_error_string_alert == "1") {
+            else if(this.duplication_error_string_alert === "1") {
                 alert(this.duplication_error_string)
             }
             

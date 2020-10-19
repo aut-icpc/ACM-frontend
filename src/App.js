@@ -1,7 +1,7 @@
 import React from "react" 
 import { Route } from 'react-router-dom'
 import BodyP4 from "./components/Main Page/BodyP4"
-import Header from "./components/Header"
+import Header from "./components/Header&DropDown/Header"
 import BodyP1 from "./components/Main Page/BodyP1"
 import About from "./components/Main Page/About"
 import Footer from "./components/Footer/Footer"
@@ -9,12 +9,12 @@ import BodyP2View from "./components/Main Page/BodyP2View"
 import SherBoxContainer from "./components/Main Page/SherBox/SherBoxesContainer"
 import TimeLineContainerView from "./components/Main Page/Timeline/TimelineContainerView"
 import RegisterView from "./components/Register/On-Site/RegisterView"
-import PosterList from "./components/PosterList"
-import ListOfTeamsStatusView from "./components/ListOfTeamsStatusView"
+import PosterList from "./components/pastResult/PosterList"
+import ListOfTeamsStatusView from "./components/RegistrationStatus/ListOfTeamsStatusView"
 import DeveloperPage from "./components/Footer/Developers/DeveloperPage"
 import RegisterMenu from './components/Register/RegisterMenu'
 import OnlineRegisterView from './components/Register/Online/OnlineRegisterView'
-import PastContestContainer from './components/PastContestContainer'
+import PastContestContainer from './components/pastResult/pastContest/PastContestContainer'
 import successfulRegistration from "./components/Register/Successful Registration/successfulRegistration"
 import successfulRegistration2 from "./components/Register/Successful Registration/successfulRegistration2"
 

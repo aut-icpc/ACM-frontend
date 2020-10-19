@@ -65,8 +65,7 @@ class SherBox extends React.Component {
                 </BrowserView>
                 <MobileView>
                     <div className="sher-container"
-                        style={{marginTop: "30px", marginBottom: "30px"}}  
-                    >
+                        style={{marginTop: "30px", marginBottom: "30px"}}>
                         <img 
                             src={this.props.url} 
                             width="160" height="160" 

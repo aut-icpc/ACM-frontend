@@ -1,5 +1,5 @@
 import React from "react"
-import "./styles/situation-card.css"
+import "../styles/situation-card.css"
 
 class SituationCard extends React.Component { 
     constructor() { 
@@ -51,7 +51,14 @@ class SituationCard extends React.Component {
                  color = "#aa740b"
             
         return (
-            <div className ="situation-card" style = {this.state.style}  onMouseEnter = {() => {this.setState({style : {boxShadow: "0 10px 10px 0 rgba(0, 0, 0, 0.7)",backgroundColor : color}})}} onMouseLeave = {() => {this.setState({style : {boxShadow: "0 10px 10px 0 rgba(0, 0, 0, 0.4)",backgroundColor : color}})}} >
+            <div className ="situation-card"
+                 style = {this.state.style}
+                 onMouseEnter = {() =>
+                    {this.setState({style :
+                            {boxShadow: "0 10px 10px 0 rgba(0, 0, 0, 0.7)",
+                                backgroundColor : color}})}}
+                                onMouseLeave = {() => {this.setState({style : {boxShadow: "0 10px 10px 0 rgba(0, 0, 0, 0.4)",
+                                        backgroundColor : color}})}} >
                 <h1>{this.props.data.name}</h1>
                 <p className = "state">State: <span>{this.state.dict[this.props.data.status]}</span></p>
                 <p>Institution: <span>{this.props.data.institution}</span></p>

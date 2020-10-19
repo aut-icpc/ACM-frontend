@@ -9,6 +9,7 @@ class successfulRegistration extends React.Component {
                 <img 
                     src="https://image.flaticon.com/icons/svg/190/190411.svg" 
                     width="200" height="200"
+                    alt="flaticon"
                 />
                 <h1>
                     Your registration was successful :)
@@ -21,8 +22,7 @@ class successfulRegistration extends React.Component {
                         Registration Status
                     </div>
                 </NavLink>
-                
-                
+
             </div>
         )
     }

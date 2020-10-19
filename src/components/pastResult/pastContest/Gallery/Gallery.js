@@ -1,9 +1,9 @@
 import React from "react"
-import "./styles/gallery.css"
+import "../../../styles/gallery.css"
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import CloseIcon from '@material-ui/icons/Close';
-import Photo from "./Photo"
+import Photo from "./photo/Photo"
 
 class Gallery extends React.Component { 
     constructor(props){
@@ -60,7 +60,7 @@ class Gallery extends React.Component {
     }
 
     next() { 
-        if(this.state.Pindex != this.state.images.length -1 )
+        if(this.state.Pindex !== this.state.images.length -1 )
             this.setState(
                 {
                     Pindex : this.state.Pindex + 1
@@ -69,7 +69,7 @@ class Gallery extends React.Component {
     }
 
     prev() { 
-        if(this.state.Pindex != 0)
+        if(this.state.Pindex !== 0)
         this.setState(
             {
                 Pindex : this.state.Pindex - 1
@@ -78,7 +78,6 @@ class Gallery extends React.Component {
     }
 
     render() {
-        console.log(this.state.images)
         const photosList = this.state.images.map((photo , index) =>  <div className="single-photo-container"  onClick = {() => this.setState({ slideStyles :{display : "block"}, Pindex :index })}><Photo thumbnail = {photo.thumbnail_url}/></div>)
         return (
             <div>

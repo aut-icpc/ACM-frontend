@@ -1,6 +1,6 @@
 import React from "react"
 import SituationCard from "./SituationCard"
-import "./styles/situation-card.css"
+import "../styles/situation-card.css"
 
 class ListOfTeamsStatus extends React.Component { 
     constructor() { 
@@ -25,11 +25,11 @@ class ListOfTeamsStatus extends React.Component {
                                 Telegram: <a href="https://t.me/ceitssc">@ceitssc</a> <br/>
                             </p>
                             <div className = "help-box">
-                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#6b6b6b"}}></div> <p>  Pending Approval</p></div>
-                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#3c9440"}}></div> <p>  Approved for payment</p></div>
-                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#3065a3"}}></div> <p>  Finalized</p></div>
-                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#aa740b"}}></div> <p>  Reserved registration beforehand</p></div>
-                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#e23838"}}></div> <p>  Denied Participation</p></div>
+                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#6b6b6b"}}/> <p>  Pending Approval</p></div>
+                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#3c9440"}}/> <p>  Approved for payment</p></div>
+                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#3065a3"}}/> <p>  Finalized</p></div>
+                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#aa740b"}}/> <p>  Reserved registration beforehand</p></div>
+                                <div className = "help"> <div className = "color-circle" style = {{backgroundColor : "#e23838"}}/> <p>  Denied Participation</p></div>
                             </div>
                     </div>
               
