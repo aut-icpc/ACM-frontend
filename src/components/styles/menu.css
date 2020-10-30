@@ -36,11 +36,13 @@
 }
 
 .card-text { 
-    position: absolute ; 
+    width: 100%;
+    position: absolute; 
     left: 50% ; 
     transform: translate(-50% , 0 );
     top: 72% ; 
     font-size: 16px;
+    text-align: center;
     font-weight: bold; 
     
 }

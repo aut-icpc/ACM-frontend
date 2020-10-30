@@ -318,7 +318,7 @@ class Register extends React.Component {
                     onSubmit={this.onSubmit}
             >                
                 <h1 className="register_page_header">Online Contest Registration</h1>
-                <h3 className="register_page_second_header">19th Amirkabir International Collegiate Programming Contest - 8th of November 2019</h3>
+                <h3 className="register_page_second_header">20th Amirkabir International Collegiate Programming Contest - 20th of November 2020</h3>
                 <div className="register_page_p">
                     <p>
                         In case you don't receive a verification email 24 hours after your registration, please inform us by:<br/>
