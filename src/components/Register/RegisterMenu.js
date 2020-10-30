@@ -89,7 +89,7 @@ export default class RegisterMenu extends React.Component {
                             </div>
                         </div>
                     </NavLink>
-                    <NavLink className="nav-link"
+                    {/* <NavLink className="nav-link"
                      //   onClick={() => alert("Registration has been Closed!")//   }
                         onClick={() => window.scrollTo(0, 0)}
                         exact to="/onlineRegister"
@@ -105,6 +105,28 @@ export default class RegisterMenu extends React.Component {
                                     alt="online"
                                     width="200" height="200"/>
                             </div>
+                            <div className="card-text">
+                                <p>
+                                    Online Contest
+                                </p>
+                            </div>
+                        </div>
+                    </NavLink> */}
+                    <NavLink className="nav-link"
+                         onClick={() => window.scrollTo(0, 0)}
+                         exact to="/onlineCovidRegister"
+                    >
+                        <div className ="register-card"
+                            onMouseEnter={this.onhover2} 
+                            onMouseLeave={this.onleave2}
+                            style={this.state.style2}    
+                        >
+                            <div className="card-image">
+                                <img src={require("./../../img/online.svg")}
+                                    width="200" height="200"
+                                     alt="onsite"
+                                />
+                            </div>  
                             <div className="card-text">
                                 <p>
                                     Online Contest
