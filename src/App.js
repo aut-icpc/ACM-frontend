@@ -18,6 +18,7 @@ import PastContestContainer from './components/pastResult/pastContest/PastContes
 import successfulRegistration from "./components/Register/Successful Registration/successfulRegistration"
 import successfulRegistration2 from "./components/Register/Successful Registration/successfulRegistration2"
 import OnlineRegisterCovidView from "./components/Register/Online-Covid/OnlineRegisterCovidView"
+import OnlineRegisterCovidUniView from "./components/Register/Online-Covid-Uni/OnlineRegisterCovidUniView"
 
 class App extends React.Component {
     constructor() {
@@ -73,9 +74,10 @@ class App extends React.Component {
         return(
             <div>
                 <Header changePage={this.changePage} />
-                <Route exact path="/onsiteRegister" component={RegisterView} />
-                <Route exact path="/onlineRegister" component={OnlineRegisterView} />
+                {/* <Route exact path="/onsiteRegister" component={RegisterView} /> */}
+                {/* <Route exact path="/onlineRegister" component={OnlineRegisterView} /> */}
                 <Route exact path="/onlineCovidRegister" component={OnlineRegisterCovidView} />
+                <Route exact path="/onlineCovidRegisterUni" component={OnlineRegisterCovidUniView} />
                 <Route exact path="/Register" component={RegisterMenu} />
                 <Route exact path="/PastResult" component={this.pastContestList} />
                 <Route exact path="/" component={this.home} />

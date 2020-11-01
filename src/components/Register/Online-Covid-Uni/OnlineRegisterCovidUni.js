@@ -212,7 +212,7 @@ class Register extends React.Component {
             if(this.state.student_number_1 === this.state.student_number_2 ||
                 this.state.student_number_1 === this.state.student_number_3 ||
                 this.state.student_number_2 === this.state.student_number_3) {
-                    this.duplication_error_string += "\nYou have entered duplicate National ID!"
+                    this.duplication_error_string += "\nYou have entered duplicate Student Number!"
                     this.duplication_error_string_alert = "1"
             }
 
@@ -432,7 +432,7 @@ class Register extends React.Component {
                     contestants : [
                         cont1, cont2, cont3
                     ],
-                    is_high: true
+                    is_high: false
                 }
 
                 axios({
@@ -470,8 +470,9 @@ class Register extends React.Component {
                         <strong>Submit</strong> button to make your team registered.<br/>
                     </p>
                     <p>
-                        Registration fee is as follows:<br/>
-                        120,000 Tomans for high school teams (40,000 Tomans for each contestant).<br/>
+                        Registration fee are as follows:<br/>
+                        120,000 Tomans for non-AUT teams (40,000 Tomans for each contestant).<br/>
+                        90,000 Tomans for teams from Amirkabir University of Technology (30,000 Tomans for each contestant).
                     </p>
                     <p> 
                         If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br/>
@@ -503,7 +504,7 @@ class Register extends React.Component {
                                 className="text_box"
                                 name="institution"
                                 type="text"
-                                placeholder="Your High School Name"
+                                placeholder="Amirkabir University of Technology"
                                 onChange={this.handleChange}
                                 inputProps = {{ maxLength: "50" }}
                             />
@@ -553,7 +554,7 @@ class Register extends React.Component {
                         </Select>
                     </FormControl>
                     <FormControl margin="normal" required >
-                        <InputLabel htmlFor="student_number">National ID</InputLabel>
+                        <InputLabel htmlFor="student_number">Student Number</InputLabel>
                         <Input
                             error={this.state.student_number_1_error}
                             className="text_box"
@@ -571,9 +572,8 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                             name="edu_level_1"
                         >
-                            <MenuItem value={"BSC"}>10th - High School</MenuItem>
-                            <MenuItem value={"MSC"}>11th - High School</MenuItem>
-                            <MenuItem value={"PHD"}>12th - High School</MenuItem>
+                            <MenuItem value={"BSC"}>Undergraduate(BSc.)</MenuItem>
+                            <MenuItem value={"MSC"}>Graduate(MSc.)</MenuItem>
                         </Select>
                     </FormControl>
 
@@ -642,7 +642,7 @@ class Register extends React.Component {
                         </Select>
                     </FormControl>
                     <FormControl margin="normal" required >
-                        <InputLabel htmlFor="student_number">National ID</InputLabel>
+                        <InputLabel htmlFor="student_number">Student Number</InputLabel>
                         <Input
                             error={this.state.student_number_2_error}
                             className="text_box"
@@ -660,9 +660,8 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                             name="edu_level_2"
                         >
-                            <MenuItem value={"BSC"}>10th - High School</MenuItem>
-                            <MenuItem value={"MSC"}>11th - High School</MenuItem>
-                            <MenuItem value={"PHD"}>12th - High School</MenuItem>
+                            <MenuItem value={"BSC"}>Undergraduate(BSc.)</MenuItem>
+                            <MenuItem value={"MSC"}>Graduate(MSc.)</MenuItem>
                         </Select>
                     </FormControl>
 
@@ -731,7 +730,7 @@ class Register extends React.Component {
                         </Select>
                     </FormControl>
                     <FormControl margin="normal" required >
-                        <InputLabel htmlFor="student_number">National ID</InputLabel>
+                        <InputLabel htmlFor="student_number">Student Number</InputLabel>
                         <Input
                             error={this.state.student_number_3_error}
                             className="text_box"
@@ -749,9 +748,8 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                             name="edu_level_3"
                         >
-                            <MenuItem value={"BSC"}>10th - High School</MenuItem>
-                            <MenuItem value={"MSC"}>11th - High School</MenuItem>
-                            <MenuItem value={"PHD"}>12th - High School</MenuItem>
+                            <MenuItem value={"BSC"}>Undergraduate(BSc.)</MenuItem>
+                            <MenuItem value={"MSC"}>Graduate(MSc.)</MenuItem>
                         </Select>
                     </FormControl>
 

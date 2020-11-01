@@ -59,7 +59,7 @@ class SituationCard extends React.Component {
                                 backgroundColor : color}})}}
                                 onMouseLeave = {() => {this.setState({style : {boxShadow: "0 10px 10px 0 rgba(0, 0, 0, 0.4)",
                                         backgroundColor : color}})}} >
-                <h1>{this.props.data.name}</h1>
+                <h1>{this.props.data.name} ‍‍{`${this.props.data.is_high ? "(High School Team)" : ""}`}</h1>
                 <p className = "state">State: <span>{this.state.dict[this.props.data.status]}</span></p>
                 <p>Institution: <span>{this.props.data.institution}</span></p>
             </div>
