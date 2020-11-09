@@ -12,7 +12,7 @@ class SituationCard extends React.Component {
       dict: {
         PENDING: "Pending Approval",
         APPROVED: "Approved for payment",
-        PAID: "Finalized",
+        FINALIZED: "Finalized",
         REJECTED: "Denied Participation",
         RESERVED: "Reserved registration beforehand",
       },
@@ -24,7 +24,7 @@ class SituationCard extends React.Component {
     if (this.props.data.status === "REJECTED") color = "#e23838";
     else if (this.props.data.status === "APPROVED") color = "#3c9440";
     else if (this.props.data.status === "PENDING") color = "#6b6b6b";
-    else if (this.props.data.status === "PAID") color = "#3065a3";
+    else if (this.props.data.status === "FINALIZED") color = "#3065a3";
     else if (this.props.data.status === "RESERVED") color = "#aa740b";
 
     this.setState({
@@ -40,7 +40,7 @@ class SituationCard extends React.Component {
     if (this.props.data.status === "REJECTED") color = "#e23838";
     else if (this.props.data.status === "APPROVED") color = "#3c9440";
     else if (this.props.data.status === "PENDING") color = "#6b6b6b";
-    else if (this.props.data.status === "PAID") color = "#3065a3";
+    else if (this.props.data.status === "FINALIZED") color = "#3065a3";
     else if (this.props.data.status === "RESERVED") color = "#aa740b";
 
     return (
