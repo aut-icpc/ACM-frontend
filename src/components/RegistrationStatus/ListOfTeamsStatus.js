@@ -25,8 +25,8 @@ class ListOfTeamsStatus extends React.Component {
             {/* Here is the list of OnSite registered teams.<br/> */}
             Here is the list of registered teams.
             <br />
-            If your team name was not in registerd team list 24 hours after
-            regitration, please inform us by:
+            If your team's name was not in the list of registered teams 24 hours
+            after your registration, please inform us by:
             <br />
             Email:{" "}
             <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a>
