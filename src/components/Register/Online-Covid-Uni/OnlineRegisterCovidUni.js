@@ -463,7 +463,7 @@ class Register extends React.Component {
                 onSubmit={this.onSubmit}
             >                
                 <h1 className="register_page_header">Online Contest Registration</h1>
-                <h3 className="register_page_second_header">20th Amirkabir International Collegiate Programming Contest - 27th of November 2020</h3>
+                <h3 className="register_page_second_header">21st Amirkabir Collegiate Programming Contest - 29th of October 2021</h3>
                 <div className="register_page_p">
                     <p>
                         Please fill all of the following fields carefully and then press the&nbsp;
