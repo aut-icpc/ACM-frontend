@@ -58,7 +58,7 @@ class Header extends React.Component {
                       <DropDown/>
                   </div>
 
-                  <img src= {require("./../../img/header-logo.png")} height="55" width = "170" onClick={this.logoClickHandler}/>
+                  <img src= {require("./../../img/header-logo.png")} height="55" width = "150" onClick={this.logoClickHandler}/>
               </div>
             </div>
         </div>
