@@ -401,6 +401,25 @@ class Register extends React.Component {
                 this.field_alert = "1"
             }
 
+            if (this.state.document_1 === null) {
+                this.setState({
+                    document_1_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_2 === null) {
+                this.setState({
+                    document_2_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_3 === null) {
+                this.setState({
+                    document_3_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+
             if (this.field_alert === "1") {
                 alert("Please fill empty fields!")
             }
