@@ -528,7 +528,7 @@ class Register extends React.Component {
                     </p>
                     <p>
                         Registration fee is as follows:<br />
-                        120,000 Tomans for high school teams (40,000 Tomans for each contestant).<br />
+                        90,000 Tomans for teams (30,000 Tomans for each contestant).<br />
                     </p>
                     <p>
                         If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br />
