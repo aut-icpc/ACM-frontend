@@ -33,6 +33,8 @@ class Register extends React.Component {
             student_number_1: "",
             email_1: "",
             phone_number_1: "",
+            document_1: "",
+            accept_share_info_1: "",
 
             //First Contestant errors
             first_name_1_error: "",
@@ -43,6 +45,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             // ### 2 ###
             //Second Contestant Info
@@ -54,6 +57,8 @@ class Register extends React.Component {
             student_number_2: "",
             email_2: "",
             phone_number_2: "",
+            document_2: "",
+            accept_share_info_2: "",
 
             //Second Contestant errors
             first_name_2_error: "",
@@ -64,6 +69,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             // ### 3 ###
             //Third Contestant Info
@@ -75,6 +81,8 @@ class Register extends React.Component {
             student_number_3: "",
             email_3: "",
             phone_number_3: "",
+            document_3: "",
+            accept_share_info_3: "",
 
             //Third Contestant errors
             first_name_3_error: "",
@@ -85,6 +93,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
 
             recaptcha: "",
         }
