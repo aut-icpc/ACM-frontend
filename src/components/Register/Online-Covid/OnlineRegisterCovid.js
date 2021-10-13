@@ -36,6 +36,7 @@ class Register extends React.Component {
             email_1: "",
             phone_number_1: "",
             document_1: "",
+            accept_1: "",
 
             //First Contestant errors
             first_name_1_error: "",
@@ -58,6 +59,8 @@ class Register extends React.Component {
             student_number_2: "",
             email_2: "",
             phone_number_2: "",
+            document_2: "",
+            accept_2: "",
 
             //Second Contestant errors
             first_name_2_error: "",
@@ -68,6 +71,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             // ### 3 ###
             //Third Contestant Info
@@ -79,6 +83,8 @@ class Register extends React.Component {
             student_number_3: "",
             email_3: "",
             phone_number_3: "",
+            document_3: "",
+            accept_3: "",
 
             //Third Contestant errors
             first_name_3_error: "",
@@ -89,6 +95,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
 
             recaptcha: "",
         }
@@ -127,7 +134,6 @@ class Register extends React.Component {
             email_1_error: "",
             phone_number_1_error: "",
             document_1_error: "",
-            accept_1: "",
 
             first_name_2_error: "",
             last_name_2_error: "",
@@ -137,6 +143,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             first_name_3_error: "",
             last_name_3_error: "",
@@ -146,6 +153,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
         })
         this.field_alert = "0"
         this.duplication_error_string = ""
@@ -410,6 +418,8 @@ class Register extends React.Component {
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
+                    document: this.state.document_1,
+                    accept: this.state.accept_1,
                 }
                 const cont2 = {
                     first_name: this.state.first_name_2,
@@ -420,6 +430,8 @@ class Register extends React.Component {
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
+                    document: this.state.document_2,
+                    accept: this.state.accept_2,
                 }
                 const cont3 = {
                     first_name: this.state.first_name_3,
@@ -430,6 +442,8 @@ class Register extends React.Component {
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
+                    document: this.state.document_3,
+                    accept: this.state.accept_3,
                 }
                 const reqBody = {
                     name: this.state.team_name,
@@ -715,6 +729,27 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                         />
                     </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_2">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_2_error}
+                            className="text_box"
+                            name="document_2"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_2"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
+                    </FormControl>
                 </div>
 
                 <div className="contestant_header_box">
@@ -803,6 +838,27 @@ class Register extends React.Component {
                             placeholder="09121111111"
                             onChange={this.handleChange}
                         />
+                    </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_3">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_3_error}
+                            className="text_box"
+                            name="document_3"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_3"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
                     </FormControl>
                 </div>
 
