@@ -1,6 +1,8 @@
 import React from "react"
-import { Dialog, DialogTitle, DialogContent, DialogActions, Select, Grid, 
-         FormControl, Input, InputLabel, MenuItem, Button, Checkbox } from '@material-ui/core';
+import {
+    Dialog, DialogTitle, DialogContent, DialogActions, Select, Grid,
+    FormControl, Input, InputLabel, MenuItem, Button, Checkbox
+} from '@material-ui/core';
 import PeopleIcon from '@material-ui/icons/People';
 import ReCAPTCHA from "react-google-recaptcha";
 import "./../../styles/register.css"
@@ -27,8 +29,8 @@ class Register extends React.Component {
             //First Contestant Info
             first_name_1: "",
             last_name_1: "",
-            gender_1: "",    
-            shirt_size_1: "L",     
+            gender_1: "",
+            shirt_size_1: "L",
             edu_level_1: "",
             student_number_1: "",
             email_1: "",
@@ -50,8 +52,8 @@ class Register extends React.Component {
             //Second Contestant Info
             first_name_2: "",
             last_name_2: "",
-            gender_2: "",    
-            shirt_size_2: "L",     
+            gender_2: "",
+            shirt_size_2: "L",
             edu_level_2: "",
             student_number_2: "",
             email_2: "",
@@ -71,8 +73,8 @@ class Register extends React.Component {
             //Third Contestant Info
             first_name_3: "",
             last_name_3: "",
-            gender_3: "",    
-            shirt_size_3: "L",     
+            gender_3: "",
+            shirt_size_3: "L",
             edu_level_3: "",
             student_number_3: "",
             email_3: "",
@@ -111,11 +113,11 @@ class Register extends React.Component {
 
     handleChange(event) {
         this.setState({
-            [event.target.name] : event.target.value,
+            [event.target.name]: event.target.value,
 
             team_error: "",
             institution_error: "",
-            
+
             first_name_1_error: "",
             last_name_1_error: "",
             gender_1_error: "",
@@ -125,6 +127,7 @@ class Register extends React.Component {
             email_1_error: "",
             phone_number_1_error: "",
             document_1_error: "",
+            accept_1: "",
 
             first_name_2_error: "",
             last_name_2_error: "",
@@ -144,9 +147,9 @@ class Register extends React.Component {
             email_3_error: "",
             phone_number_3_error: "",
         })
-        this.field_alert= "0"
-        this.duplication_error_string= ""
-        this.duplication_error_string_alert="0"
+        this.field_alert = "0"
+        this.duplication_error_string = ""
+        this.duplication_error_string_alert = "0"
     }
 
     OpenLocalRules() {
@@ -179,61 +182,61 @@ class Register extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         if (this.state.rules === true) {
-            if(!validator.isEmail(this.state.email_1)) {
+            if (!validator.isEmail(this.state.email_1)) {
                 this.duplication_error_string = "Contestant #1 email is invalid!"
                 this.duplication_error_string_alert = "1"
             }
-            if(!validator.isEmail(this.state.email_2)) {
+            if (!validator.isEmail(this.state.email_2)) {
                 this.duplication_error_string += "\nContestant #2 email is invalid!"
                 this.duplication_error_string_alert = "1"
             }
-            if(!validator.isEmail(this.state.email_3)) {
+            if (!validator.isEmail(this.state.email_3)) {
                 this.duplication_error_string += "\nContestant #3 email is invalid!"
                 this.duplication_error_string_alert = "1"
             }
 
-            if(!validator.isMobilePhone(this.state.phone_number_1, 'fa-IR')) {
+            if (!validator.isMobilePhone(this.state.phone_number_1, 'fa-IR')) {
                 this.duplication_error_string += "\nContestant #1 Phone Number is invalid!"
                 this.duplication_error_string_alert = "1"
             }
-            if(!validator.isMobilePhone(this.state.phone_number_2, 'fa-IR')) {
+            if (!validator.isMobilePhone(this.state.phone_number_2, 'fa-IR')) {
                 this.duplication_error_string += "\nContestant #2 Phone Number is invalid!"
                 this.duplication_error_string_alert = "1"
             }
-            if(!validator.isMobilePhone(this.state.phone_number_3, 'fa-IR')) {
+            if (!validator.isMobilePhone(this.state.phone_number_3, 'fa-IR')) {
                 this.duplication_error_string += "\nContestant #3 Phone Number is invalid!"
                 this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.email_1 === this.state.email_2 ||
+            if (this.state.email_1 === this.state.email_2 ||
                 this.state.email_1 === this.state.email_3 ||
                 this.state.email_3 === this.state.email_2) {
                 this.duplication_error_string += "\nYou have entered duplicate Email!"
                 this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.student_number_1 === this.state.student_number_2 ||
+            if (this.state.student_number_1 === this.state.student_number_2 ||
                 this.state.student_number_1 === this.state.student_number_3 ||
                 this.state.student_number_2 === this.state.student_number_3) {
-                    this.duplication_error_string += "\nYou have entered duplicate National ID!"
-                    this.duplication_error_string_alert = "1"
+                this.duplication_error_string += "\nYou have entered duplicate National ID!"
+                this.duplication_error_string_alert = "1"
             }
 
-            if(this.state.phone_number_1 === this.state.phone_number_2 ||
+            if (this.state.phone_number_1 === this.state.phone_number_2 ||
                 this.state.phone_number_1 === this.state.phone_number_3 ||
                 this.state.phone_number_2 === this.state.phone_number_3) {
-                    this.duplication_error_string += "\nYou have entered duplicate Phone Number!"
-                    this.duplication_error_string_alert = "1"
+                this.duplication_error_string += "\nYou have entered duplicate Phone Number!"
+                this.duplication_error_string_alert = "1"
             }
 
 
-            if(this.state.team_name === "") {
+            if (this.state.team_name === "") {
                 this.setState({
                     team_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.institution === "") {
+            if (this.state.institution === "") {
                 this.setState({
                     institution_error: "error",
                 })
@@ -241,49 +244,49 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_1 === "") {
+            if (this.state.first_name_1 === "") {
                 this.setState({
                     first_name_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_1 === "") {
+            if (this.state.last_name_1 === "") {
                 this.setState({
                     last_name_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_1 === "") {
+            if (this.state.gender_1 === "") {
                 this.setState({
                     gender_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_1 === "") {
+            if (this.state.shirt_size_1 === "") {
                 this.setState({
                     shirt_size_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_1 === "") {
+            if (this.state.edu_level_1 === "") {
                 this.setState({
                     edu_level_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_1 === "") {
+            if (this.state.student_number_1 === "") {
                 this.setState({
                     student_number_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_1 === "") {
+            if (this.state.email_1 === "") {
                 this.setState({
                     email_1_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_1 === "") {
+            if (this.state.phone_number_1 === "") {
                 this.setState({
                     phone_number_1_error: "error",
                 })
@@ -291,49 +294,49 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_2 === "") {
+            if (this.state.first_name_2 === "") {
                 this.setState({
                     first_name_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_2 === "") {
+            if (this.state.last_name_2 === "") {
                 this.setState({
                     last_name_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_2 === "") {
+            if (this.state.gender_2 === "") {
                 this.setState({
                     gender_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_2 === "") {
+            if (this.state.shirt_size_2 === "") {
                 this.setState({
                     shirt_size_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_2 === "") {
+            if (this.state.edu_level_2 === "") {
                 this.setState({
                     edu_level_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_2 === "") {
+            if (this.state.student_number_2 === "") {
                 this.setState({
                     student_number_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_2 === "") {
+            if (this.state.email_2 === "") {
                 this.setState({
                     email_2_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_2 === "") {
+            if (this.state.phone_number_2 === "") {
                 this.setState({
                     phone_number_2_error: "error",
                 })
@@ -341,68 +344,68 @@ class Register extends React.Component {
             }
 
 
-            if(this.state.first_name_3 === "") {
+            if (this.state.first_name_3 === "") {
                 this.setState({
                     first_name_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.last_name_3 === "") {
+            if (this.state.last_name_3 === "") {
                 this.setState({
                     last_name_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.gender_3 === "") {
+            if (this.state.gender_3 === "") {
                 this.setState({
                     gender_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.shirt_size_3 === "") {
+            if (this.state.shirt_size_3 === "") {
                 this.setState({
                     shirt_size_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.edu_level_3 === "") {
+            if (this.state.edu_level_3 === "") {
                 this.setState({
                     edu_level_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.student_number_3 === "") {
+            if (this.state.student_number_3 === "") {
                 this.setState({
                     student_number_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.email_3 === "") {
+            if (this.state.email_3 === "") {
                 this.setState({
                     email_3_error: "error",
                 })
                 this.field_alert = "1"
             }
-            if(this.state.phone_number_3 === "") {
+            if (this.state.phone_number_3 === "") {
                 this.setState({
                     phone_number_3_error: "error",
                 })
                 this.field_alert = "1"
             }
 
-            if(this.field_alert === "1") {
+            if (this.field_alert === "1") {
                 alert("Please fill empty fields!")
             }
-            else if(this.duplication_error_string_alert === "1") {
+            else if (this.duplication_error_string_alert === "1") {
                 alert(this.duplication_error_string)
             }
-            
+
             else {
                 const cont1 = {
                     first_name: this.state.first_name_1,
                     last_name: this.state.last_name_1,
-                    gender: this.state.gender_1,    
-                    shirt_size: this.state.shirt_size_1,     
+                    gender: this.state.gender_1,
+                    shirt_size: this.state.shirt_size_1,
                     edu_level: this.state.edu_level_1,
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
@@ -411,8 +414,8 @@ class Register extends React.Component {
                 const cont2 = {
                     first_name: this.state.first_name_2,
                     last_name: this.state.last_name_2,
-                    gender: this.state.gender_2,    
-                    shirt_size: this.state.shirt_size_2,     
+                    gender: this.state.gender_2,
+                    shirt_size: this.state.shirt_size_2,
                     edu_level: this.state.edu_level_2,
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
@@ -421,8 +424,8 @@ class Register extends React.Component {
                 const cont3 = {
                     first_name: this.state.first_name_3,
                     last_name: this.state.last_name_3,
-                    gender: this.state.gender_3,    
-                    shirt_size: this.state.shirt_size_3,     
+                    gender: this.state.gender_3,
+                    shirt_size: this.state.shirt_size_3,
                     edu_level: this.state.edu_level_3,
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
@@ -432,24 +435,24 @@ class Register extends React.Component {
                     name: this.state.team_name,
                     institution: this.state.institution,
                     recaptcha: this.state.recaptcha,
-                    contestants : [
+                    contestants: [
                         cont1, cont2, cont3
                     ],
                     is_high: true
                 }
 
                 axios({
-                    url : process.env.REACT_APP_URL+"/api/register/team/onsite",
-                    method : 'POST',
-                    data : reqBody,
-                    headers : {
-                        'Content-Type' : 'application/json'
+                    url: process.env.REACT_APP_URL + "/api/register/team/onsite",
+                    method: 'POST',
+                    data: reqBody,
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
                 }).then(res => {
                     console.log("successful");
-                    window.location.replace('/successfulRegistration')                   
+                    window.location.replace('/successfulRegistration')
                 }).catch(error => {
-                    if(error.response) {
+                    if (error.response) {
                         console.log(error.response);
                     }
                 })
@@ -461,25 +464,25 @@ class Register extends React.Component {
     }
 
     render() {
-        return(
-            <form className="register_container" 
+        return (
+            <form className="register_container"
                 onSubmit={this.onSubmit}
-            >                
+            >
                 <h1 className="register_page_header">Online Contest Registration</h1>
                 <h3 className="register_page_second_header">21st Amirkabir Collegiate Programming Contest - 29th of October 2021</h3>
                 <div className="register_page_p">
                     <p>
                         Please fill all of the following fields carefully and then press the&nbsp;
-                        <strong>Submit</strong> button to make your team registered.<br/>
+                        <strong>Submit</strong> button to make your team registered.<br />
                     </p>
                     <p>
-                        Registration fee is as follows:<br/>
-                        120,000 Tomans for high school teams (40,000 Tomans for each contestant).<br/>
+                        Registration fee is as follows:<br />
+                        120,000 Tomans for high school teams (40,000 Tomans for each contestant).<br />
                     </p>
-                    <p> 
-                        If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br/>
-                        Email: <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a><br/>
-                        Telegram: <a href="https://t.me/ceitssc">@ceitssc</a> <br/>
+                    <p>
+                        If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br />
+                        Email: <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a><br />
+                        Telegram: <a href="https://t.me/ceitssc">@ceitssc</a> <br />
                     </p>
                 </div>
                 <div className="team_box">
@@ -496,9 +499,9 @@ class Register extends React.Component {
                                 name="team_name"
                                 type="text"
                                 onChange={this.handleChange}
-                                inputProps = {{ maxLength: "25" }}
+                                inputProps={{ maxLength: "25" }}
                             />
-                        </FormControl>                    
+                        </FormControl>
                         <FormControl required>
                             <InputLabel htmlFor="institution">Institution</InputLabel>
                             <Input
@@ -508,12 +511,12 @@ class Register extends React.Component {
                                 type="text"
                                 placeholder="Your High School Name"
                                 onChange={this.handleChange}
-                                inputProps = {{ maxLength: "50" }}
+                                inputProps={{ maxLength: "50" }}
                             />
                         </FormControl>
                     </div>
                 </div>
-                <br/>
+                <br />
 
                 <div className="contestant_header_box">
                     <PersonIcon />
@@ -528,7 +531,7 @@ class Register extends React.Component {
                             name="first_name_1"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required >
@@ -539,12 +542,12 @@ class Register extends React.Component {
                             name="last_name_1"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="gender">Gender</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.gender_1_error}
                             className="text_box"
                             value={this.state.gender_1}
@@ -567,7 +570,7 @@ class Register extends React.Component {
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="edu_level">Current Educational Level</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.edu_level_1_error}
                             className="text_box"
                             value={this.state.edu_level_1}
@@ -587,7 +590,7 @@ class Register extends React.Component {
                             className="text_box"
                             name="email_1"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "100" }}
+                            inputProps={{ maxLength: "100" }}
                             type="email"
                         />
                     </FormControl>
@@ -604,7 +607,7 @@ class Register extends React.Component {
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="document_1">Documents</InputLabel>
-                        <Input 
+                        <Input
                             error={this.state.document_1_error}
                             className="text_box"
                             name="document_1"
@@ -612,6 +615,16 @@ class Register extends React.Component {
                             placeholder="Your documents..."
                             onChange={this.handleChange}
                         />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_1"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
                     </FormControl>
                 </div>
 
@@ -628,7 +641,7 @@ class Register extends React.Component {
                             name="first_name_2"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required >
@@ -639,12 +652,12 @@ class Register extends React.Component {
                             name="last_name_2"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="gender">Gender</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.gender_2_error}
                             className="text_box"
                             value={this.state.gender_2}
@@ -667,7 +680,7 @@ class Register extends React.Component {
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="edu_level">Current Educational Level</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.edu_level_2_error}
                             className="text_box"
                             value={this.state.edu_level_2}
@@ -687,7 +700,7 @@ class Register extends React.Component {
                             className="text_box"
                             name="email_2"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "100" }}
+                            inputProps={{ maxLength: "100" }}
                             type="email"
                         />
                     </FormControl>
@@ -717,7 +730,7 @@ class Register extends React.Component {
                             name="first_name_3"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required >
@@ -728,12 +741,12 @@ class Register extends React.Component {
                             name="last_name_3"
                             type="text"
                             onChange={this.handleChange}
-                            inputProps = {{ maxLength: "30" }}
+                            inputProps={{ maxLength: "30" }}
                         />
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="gender">Gender</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.gender_3_error}
                             className="text_box"
                             value={this.state.gender_3}
@@ -756,7 +769,7 @@ class Register extends React.Component {
                     </FormControl>
                     <FormControl margin="normal" required>
                         <InputLabel htmlFor="edu_level">Current Educational Level</InputLabel>
-                        <Select 
+                        <Select
                             error={this.state.edu_level_3_error}
                             className="text_box"
                             value={this.state.edu_level_3}
@@ -775,7 +788,7 @@ class Register extends React.Component {
                             error={this.state.email_3_error}
                             className="text_box"
                             name="email_3"
-                            inputProps = {{ maxLength: "100" }}
+                            inputProps={{ maxLength: "100" }}
                             onChange={this.handleChange}
                             type="email"
                         />
@@ -800,20 +813,22 @@ class Register extends React.Component {
                                 name="rules"
                                 color="default"
                                 onChange={this.handleCheckboxChange}
-                            />     
-                        </div>       
+                            />
+                        </div>
                         <h4>
                             We have read and accepted&nbsp;
-                            <a href="#" 
-                                style={{fontFamily: "inherit", color: "#00b0ff"}} 
-                                onClick={this.OpenRegionalRules}>
-                                    Regional Rules 
+                            <a href="#"
+                                style={{ fontFamily: "inherit", color: "#00b0ff" }}
+                                onClick={this.OpenRegionalRules}
+                            >
+                                Regional Rules
                             </a>
                             &nbsp;and&nbsp;
-                            <a href="#" 
-                                style={{fontFamily: "inherit", color: "#00b0ff"}} 
-                                onClick={this.OpenLocalRules}>
-                                    Local Rules
+                            <a href="#"
+                                style={{ fontFamily: "inherit", color: "#00b0ff" }}
+                                onClick={this.OpenLocalRules}
+                            >
+                                Local Rules
                             </a>.
                         </h4>
                         <Dialog
@@ -824,7 +839,7 @@ class Register extends React.Component {
                                 {"Regional Rules"}
                             </DialogTitle>
                             <DialogContent>
-                                <RegionalRules/>
+                                <RegionalRules />
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={this.CloseRegionalRules} color="default" autoFocus>
@@ -841,7 +856,7 @@ class Register extends React.Component {
                                 {"Amirkabir Local Contest Information and Rules"}
                             </DialogTitle>
                             <DialogContent>
-                                <LocalRules/>
+                                <LocalRules />
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={this.CloseLocalRules} color="default" autoFocus>
@@ -855,10 +870,10 @@ class Register extends React.Component {
                         sitekey="6LfEJgkUAAAAAOVMfzDA_6E2Mw4jMtjYadVy5upA"
                         onChange={this.onChange}
                     />
-                    <Button 
-                        style={{fontFamily: "inherit", marginTop: "20px"}} 
-                        color="primary" 
-                        variant="contained" 
+                    <Button
+                        style={{ fontFamily: "inherit", marginTop: "20px" }}
+                        color="primary"
+                        variant="contained"
                         className="submit_button"
                         type="submit"
                         onClick={this.onSubmit}
