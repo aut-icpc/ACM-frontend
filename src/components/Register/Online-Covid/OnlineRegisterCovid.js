@@ -33,6 +33,7 @@ class Register extends React.Component {
             student_number_1: "",
             email_1: "",
             phone_number_1: "",
+            document_1: "",
 
             //First Contestant errors
             first_name_1_error: "",
@@ -43,6 +44,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             // ### 2 ###
             //Second Contestant Info
@@ -122,6 +124,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             first_name_2_error: "",
             last_name_2_error: "",
@@ -596,6 +599,17 @@ class Register extends React.Component {
                             name="phone_number_1"
                             type="number"
                             placeholder="09121111111"
+                            onChange={this.handleChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_1">Documents</InputLabel>
+                        <Input 
+                            error={this.state.document_1_error}
+                            className="text_box"
+                            name="document_1"
+                            type="file"
+                            placeholder="Your documents..."
                             onChange={this.handleChange}
                         />
                     </FormControl>
