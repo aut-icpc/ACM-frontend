@@ -102,6 +102,7 @@ class Register extends React.Component {
         this.duplication_error_string_alert = "0"
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+        this.handleShareInfoChange = this.handleShareInfoChange.bind(this)
         this.handleFileChange = this.handleFileChange.bind(this)
         this.OpenLocalRules = this.OpenLocalRules.bind(this)
         this.CloseLocalRules = this.CloseLocalRules.bind(this)
@@ -183,6 +184,12 @@ class Register extends React.Component {
     handleCheckboxChange(event) {
         this.setState({
             rules: event.target.checked
+        })
+    }
+
+    handleShareInfoChange(event) {
+        this.setState({
+            [event.target.name]: event.target.checked
         })
     }
 
@@ -442,7 +449,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
-                    accept_share_info: this.state.accept_share_info_1,
+                    accept_share_info: this.state.accept_share_info_1 ? true : false,
                 }
                 const cont2 = {
                     first_name: this.state.first_name_2,
@@ -453,7 +460,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
-                    accept_share_info: this.state.accept_share_info_2,
+                    accept_share_info: this.state.accept_share_info_2 ? true : false,
                 }
                 const cont3 = {
                     first_name: this.state.first_name_3,
@@ -464,7 +471,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
-                    accept_share_info: this.state.accept_share_info_3,
+                    accept_share_info: this.state.accept_share_info_3 ? true : false,
                 }
                 const data = {
                     name: this.state.team_name,
@@ -484,7 +491,7 @@ class Register extends React.Component {
                 bodyFormData.append('document_3', this.state.document_3);
 
                 axios({
-                    url : process.env.REACT_APP_URL+"/api/register/team/onsite",
+                    url : process.env.REACT_APP_URL + "/api/register/team/onsite",
                     method : 'POST',
                     data : bodyFormData,
                     headers : {
@@ -652,7 +659,7 @@ class Register extends React.Component {
                         <Input
                             error={this.state.document_1_error}
                             className="text_box"
-                            ref={(ref) => this.document_1 = ref}
+                            name="document_1"
                             type="file"
                             placeholder="Your documents..."
                             onChange={this.handleFileChange}
@@ -663,7 +670,7 @@ class Register extends React.Component {
                             <Checkbox
                                 name="accept_share_info_1"
                                 color="default"
-                                onChange={this.handleCheckboxChange}
+                                onChange={this.handleShareInfoChange}
                             />
                             Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
@@ -772,7 +779,7 @@ class Register extends React.Component {
                             <Checkbox
                                 name="accept_share_info_2"
                                 color="default"
-                                onChange={this.handleCheckboxChange}
+                                onChange={this.handleShareInfoChange}
                             />
                             Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
@@ -881,7 +888,7 @@ class Register extends React.Component {
                             <Checkbox
                                 name="accept_share_info_3"
                                 color="default"
-                                onChange={this.handleCheckboxChange}
+                                onChange={this.handleShareInfoChange}
                             />
                             Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
