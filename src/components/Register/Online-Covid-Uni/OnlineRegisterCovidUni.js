@@ -102,6 +102,7 @@ class Register extends React.Component {
         this.duplication_error_string_alert = "0"
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+        this.handleFileChange = this.handleFileChange.bind(this)
         this.OpenLocalRules = this.OpenLocalRules.bind(this)
         this.CloseLocalRules = this.CloseLocalRules.bind(this)
         this.OpenRegionalRules = this.OpenRegionalRules.bind(this)
@@ -131,6 +132,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             first_name_2_error: "",
             last_name_2_error: "",
@@ -140,6 +142,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             first_name_3_error: "",
             last_name_3_error: "",
@@ -149,6 +152,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
         })
         this.field_alert= "0"
         this.duplication_error_string= ""
@@ -180,6 +184,12 @@ class Register extends React.Component {
         this.setState({
             rules: event.target.checked
         })
+    }
+
+    handleFileChange(event) {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
     }
 
     onSubmit(event) {
