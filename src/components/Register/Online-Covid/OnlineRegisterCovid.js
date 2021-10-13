@@ -104,6 +104,7 @@ class Register extends React.Component {
         this.duplication_error_string_alert = "0"
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+        this.handleFileChange = this.handleFileChange.bind(this)
         this.OpenLocalRules = this.OpenLocalRules.bind(this)
         this.CloseLocalRules = this.CloseLocalRules.bind(this)
         this.OpenRegionalRules = this.OpenRegionalRules.bind(this)
@@ -185,6 +186,12 @@ class Register extends React.Component {
         this.setState({
             rules: event.target.checked
         })
+    }
+
+    handleFileChange(event) {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
     }
 
     onSubmit(event) {
@@ -427,7 +434,7 @@ class Register extends React.Component {
                 alert(this.duplication_error_string)
             }
 
-            else {
+            //else {
                 const cont1 = {
                     first_name: this.state.first_name_1,
                     last_name: this.state.last_name_1,
@@ -437,7 +444,6 @@ class Register extends React.Component {
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
-                    document: this.state.document_1,
                     accept_share_info: this.state.accept_share_info_1,
                 }
                 const cont2 = {
@@ -449,7 +455,6 @@ class Register extends React.Component {
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
-                    document: this.state.document_2,
                     accept_share_info: this.state.accept_share_info_2,
                 }
                 const cont3 = {
@@ -461,10 +466,9 @@ class Register extends React.Component {
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
-                    document: this.state.document_3,
                     accept_share_info: this.state.accept_share_info_3,
                 }
-                const reqBody = {
+                const data = {
                     name: this.state.team_name,
                     institution: this.state.institution,
                     recaptcha: this.state.recaptcha,
@@ -474,12 +478,21 @@ class Register extends React.Component {
                     is_high: true
                 }
 
+                const bodyFormData = new FormData();
+
+                bodyFormData.append('data', data);
+                bodyFormData.append('document_1', this.state.document_1);
+                bodyFormData.append('document_2', this.state.document_2);
+                bodyFormData.append('document_3', this.state.document_3);
+
+                console.log(this.state.document_1);
+
                 axios({
-                    url: process.env.REACT_APP_URL + "/api/register/team/onsite",
+                    url: 'https://webhook.site/95d7617c-0be7-46e8-b8fe-e41f54eec098',
                     method: 'POST',
-                    data: reqBody,
+                    data: bodyFormData,
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'multipart/form-data'
                     }
                 }).then(res => {
                     console.log("successful");
@@ -489,7 +502,7 @@ class Register extends React.Component {
                         console.log(error.response);
                     }
                 })
-            }
+            //}
         }
         else {
             alert("Please Check Rules!")
@@ -643,10 +656,10 @@ class Register extends React.Component {
                         <Input
                             error={this.state.document_1_error}
                             className="text_box"
-                            name="document_1"
+                            ref={(ref) => this.document_1 = ref}
                             type="file"
                             placeholder="Your documents..."
-                            onChange={this.handleChange}
+                            onChange={this.handleFileChange}
                         />
                     </FormControl>
                     <FormControl margin="normal">
@@ -756,7 +769,7 @@ class Register extends React.Component {
                             name="document_2"
                             type="file"
                             placeholder="Your documents..."
-                            onChange={this.handleChange}
+                            onChange={this.handleFileChange}
                         />
                     </FormControl>
                     <FormControl margin="normal">
@@ -866,7 +879,7 @@ class Register extends React.Component {
                             name="document_3"
                             type="file"
                             placeholder="Your documents..."
-                            onChange={this.handleChange}
+                            onChange={this.handleFileChange}
                         />
                     </FormControl>
                     <FormControl margin="normal">
