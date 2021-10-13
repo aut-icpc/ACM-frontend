@@ -36,7 +36,7 @@ class Register extends React.Component {
             email_1: "",
             phone_number_1: "",
             document_1: "",
-            accept_1: "",
+            accept_share_info_1: "",
 
             //First Contestant errors
             first_name_1_error: "",
@@ -60,7 +60,7 @@ class Register extends React.Component {
             email_2: "",
             phone_number_2: "",
             document_2: "",
-            accept_2: "",
+            accept_share_info_2: "",
 
             //Second Contestant errors
             first_name_2_error: "",
@@ -84,7 +84,7 @@ class Register extends React.Component {
             email_3: "",
             phone_number_3: "",
             document_3: "",
-            accept_3: "",
+            accept_share_info_3: "",
 
             //Third Contestant errors
             first_name_3_error: "",
@@ -419,7 +419,7 @@ class Register extends React.Component {
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
                     document: this.state.document_1,
-                    accept: this.state.accept_1,
+                    accept_share_info: this.state.accept_share_info_1,
                 }
                 const cont2 = {
                     first_name: this.state.first_name_2,
@@ -431,7 +431,7 @@ class Register extends React.Component {
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
                     document: this.state.document_2,
-                    accept: this.state.accept_2,
+                    accept_share_info: this.state.accept_share_info_2,
                 }
                 const cont3 = {
                     first_name: this.state.first_name_3,
@@ -443,7 +443,7 @@ class Register extends React.Component {
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
                     document: this.state.document_3,
-                    accept: this.state.accept_3,
+                    accept_share_info: this.state.accept_share_info_3,
                 }
                 const reqBody = {
                     name: this.state.team_name,
@@ -633,7 +633,7 @@ class Register extends React.Component {
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
-                                name="accept_1"
+                                name="accept_share_info_1"
                                 color="default"
                                 onChange={this.handleCheckboxChange}
                             />
@@ -743,7 +743,7 @@ class Register extends React.Component {
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
-                                name="accept_2"
+                                name="accept_share_info_2"
                                 color="default"
                                 onChange={this.handleCheckboxChange}
                             />
@@ -853,7 +853,7 @@ class Register extends React.Component {
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
-                                name="accept_3"
+                                name="accept_share_info_3"
                                 color="default"
                                 onChange={this.handleCheckboxChange}
                             />
