@@ -33,6 +33,8 @@ class Register extends React.Component {
             student_number_1: "",
             email_1: "",
             phone_number_1: "",
+            document_1: "",
+            accept_share_info_1: "",
 
             //First Contestant errors
             first_name_1_error: "",
@@ -43,6 +45,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             // ### 2 ###
             //Second Contestant Info
@@ -54,6 +57,8 @@ class Register extends React.Component {
             student_number_2: "",
             email_2: "",
             phone_number_2: "",
+            document_2: "",
+            accept_share_info_2: "",
 
             //Second Contestant errors
             first_name_2_error: "",
@@ -64,6 +69,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             // ### 3 ###
             //Third Contestant Info
@@ -75,6 +81,8 @@ class Register extends React.Component {
             student_number_3: "",
             email_3: "",
             phone_number_3: "",
+            document_3: "",
+            accept_share_info_3: "",
 
             //Third Contestant errors
             first_name_3_error: "",
@@ -85,6 +93,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
 
             recaptcha: "",
         }
@@ -93,6 +102,8 @@ class Register extends React.Component {
         this.duplication_error_string_alert = "0"
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+        this.handleShareInfoChange = this.handleShareInfoChange.bind(this)
+        this.handleFileChange = this.handleFileChange.bind(this)
         this.OpenLocalRules = this.OpenLocalRules.bind(this)
         this.CloseLocalRules = this.CloseLocalRules.bind(this)
         this.OpenRegionalRules = this.OpenRegionalRules.bind(this)
@@ -122,6 +133,7 @@ class Register extends React.Component {
             student_number_1_error: "",
             email_1_error: "",
             phone_number_1_error: "",
+            document_1_error: "",
 
             first_name_2_error: "",
             last_name_2_error: "",
@@ -131,6 +143,7 @@ class Register extends React.Component {
             student_number_2_error: "",
             email_2_error: "",
             phone_number_2_error: "",
+            document_2_error: "",
 
             first_name_3_error: "",
             last_name_3_error: "",
@@ -140,6 +153,7 @@ class Register extends React.Component {
             student_number_3_error: "",
             email_3_error: "",
             phone_number_3_error: "",
+            document_3_error: "",
         })
         this.field_alert= "0"
         this.duplication_error_string= ""
@@ -171,6 +185,18 @@ class Register extends React.Component {
         this.setState({
             rules: event.target.checked
         })
+    }
+
+    handleShareInfoChange(event) {
+        this.setState({
+            [event.target.name]: event.target.checked
+        })
+    }
+
+    handleFileChange(event) {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
     }
 
     onSubmit(event) {
@@ -387,6 +413,25 @@ class Register extends React.Component {
                 this.field_alert = "1"
             }
 
+            if (this.state.document_1 === null) {
+                this.setState({
+                    document_1_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_2 === null) {
+                this.setState({
+                    document_2_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_3 === null) {
+                this.setState({
+                    document_3_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+
             if(this.field_alert === "1") {
                 alert("Please fill empty fields!")
             }
@@ -404,6 +449,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
+                    accept_share_info: this.state.accept_share_info_1 ? true : false,
                 }
                 const cont2 = {
                     first_name: this.state.first_name_2,
@@ -414,6 +460,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
+                    accept_share_info: this.state.accept_share_info_2 ? true : false,
                 }
                 const cont3 = {
                     first_name: this.state.first_name_3,
@@ -424,8 +471,9 @@ class Register extends React.Component {
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
+                    accept_share_info: this.state.accept_share_info_3 ? true : false,
                 }
-                const reqBody = {
+                const data = {
                     name: this.state.team_name,
                     institution: this.state.institution,
                     recaptcha: this.state.recaptcha,
@@ -435,12 +483,19 @@ class Register extends React.Component {
                     is_high: false
                 }
 
+                const bodyFormData = new FormData();
+
+                bodyFormData.append('data', JSON.stringify(data));
+                bodyFormData.append('document_1', this.state.document_1);
+                bodyFormData.append('document_2', this.state.document_2);
+                bodyFormData.append('document_3', this.state.document_3);
+
                 axios({
-                    url : process.env.REACT_APP_URL+"/api/register/team/onsite",
+                    url : process.env.REACT_APP_URL + "/api/register/team/onsite",
                     method : 'POST',
-                    data : reqBody,
+                    data : bodyFormData,
                     headers : {
-                        'Content-Type' : 'application/json'
+                        'Content-Type' : 'multipart/form-data'
                     }
                 }).then(res => {
                     console.log("successful");
@@ -471,7 +526,6 @@ class Register extends React.Component {
                     </p>
                     <p>
                         Registration fees are as follows:<br/>
-                        120,000 Tomans for non-AUT teams (40,000 Tomans for each contestant).<br/>
                         90,000 Tomans for teams from Amirkabir University of Technology (30,000 Tomans for each contestant).
                     </p>
                     <p> 
@@ -599,6 +653,27 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                         />
                     </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_1">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_1_error}
+                            className="text_box"
+                            name="document_1"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_1"
+                                color="default"
+                                onChange={this.handleShareInfoChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
+                    </FormControl>
                 </div>
 
                 <div className="contestant_header_box">
@@ -687,6 +762,27 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                         />
                     </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_2">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_2_error}
+                            className="text_box"
+                            name="document_2"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_2"
+                                color="default"
+                                onChange={this.handleShareInfoChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
+                    </FormControl>
                 </div>
 
                 <div className="contestant_header_box">
@@ -774,6 +870,27 @@ class Register extends React.Component {
                             placeholder="09121111111"
                             onChange={this.handleChange}
                         />
+                    </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_3">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_3_error}
+                            className="text_box"
+                            name="document_3"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_3"
+                                color="default"
+                                onChange={this.handleShareInfoChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
                     </FormControl>
                 </div>
 
