@@ -480,7 +480,7 @@ class Register extends React.Component {
 
                 const bodyFormData = new FormData();
 
-                bodyFormData.append('data', data);
+                bodyFormData.append('data', JSON.stringify(data));
                 bodyFormData.append('document_1', this.state.document_1);
                 bodyFormData.append('document_2', this.state.document_2);
                 bodyFormData.append('document_3', this.state.document_3);
