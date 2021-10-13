@@ -434,7 +434,7 @@ class Register extends React.Component {
                 alert(this.duplication_error_string)
             }
 
-            //else {
+            else {
                 const cont1 = {
                     first_name: this.state.first_name_1,
                     last_name: this.state.last_name_1,
@@ -485,10 +485,8 @@ class Register extends React.Component {
                 bodyFormData.append('document_2', this.state.document_2);
                 bodyFormData.append('document_3', this.state.document_3);
 
-                console.log(this.state.document_1);
-
                 axios({
-                    url: 'https://webhook.site/95d7617c-0be7-46e8-b8fe-e41f54eec098',
+                    url: process.env.REACT_APP_URL + "/api/register/team/onsite",
                     method: 'POST',
                     data: bodyFormData,
                     headers: {
@@ -502,7 +500,7 @@ class Register extends React.Component {
                         console.log(error.response);
                     }
                 })
-            //}
+            }
         }
         else {
             alert("Please Check Rules!")

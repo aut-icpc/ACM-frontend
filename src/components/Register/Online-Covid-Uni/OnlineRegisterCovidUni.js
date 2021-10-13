@@ -406,6 +406,25 @@ class Register extends React.Component {
                 this.field_alert = "1"
             }
 
+            if (this.state.document_1 === null) {
+                this.setState({
+                    document_1_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_2 === null) {
+                this.setState({
+                    document_2_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+            if (this.state.document_3 === null) {
+                this.setState({
+                    document_3_error: 'Empty',
+                })
+                this.field_alert = "1"
+            }
+
             if(this.field_alert === "1") {
                 alert("Please fill empty fields!")
             }
@@ -423,6 +442,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_1,
                     email: this.state.email_1,
                     phone_number: this.state.phone_number_1,
+                    accept_share_info: this.state.accept_share_info_1,
                 }
                 const cont2 = {
                     first_name: this.state.first_name_2,
@@ -433,6 +453,7 @@ class Register extends React.Component {
                     student_number: this.state.student_number_2,
                     email: this.state.email_2,
                     phone_number: this.state.phone_number_2,
+                    accept_share_info: this.state.accept_share_info_2,
                 }
                 const cont3 = {
                     first_name: this.state.first_name_3,
@@ -443,8 +464,9 @@ class Register extends React.Component {
                     student_number: this.state.student_number_3,
                     email: this.state.email_3,
                     phone_number: this.state.phone_number_3,
+                    accept_share_info: this.state.accept_share_info_3,
                 }
-                const reqBody = {
+                const data = {
                     name: this.state.team_name,
                     institution: this.state.institution,
                     recaptcha: this.state.recaptcha,
@@ -454,12 +476,19 @@ class Register extends React.Component {
                     is_high: false
                 }
 
+                const bodyFormData = new FormData();
+
+                bodyFormData.append('data', JSON.stringify(data));
+                bodyFormData.append('document_1', this.state.document_1);
+                bodyFormData.append('document_2', this.state.document_2);
+                bodyFormData.append('document_3', this.state.document_3);
+
                 axios({
                     url : process.env.REACT_APP_URL+"/api/register/team/onsite",
                     method : 'POST',
-                    data : reqBody,
+                    data : bodyFormData,
                     headers : {
-                        'Content-Type' : 'application/json'
+                        'Content-Type' : 'multipart/form-data'
                     }
                 }).then(res => {
                     console.log("successful");
