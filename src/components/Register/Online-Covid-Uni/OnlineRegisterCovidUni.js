@@ -647,6 +647,27 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                         />
                     </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_1">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_1_error}
+                            className="text_box"
+                            ref={(ref) => this.document_1 = ref}
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_1"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
+                    </FormControl>
                 </div>
 
                 <div className="contestant_header_box">
@@ -735,6 +756,27 @@ class Register extends React.Component {
                             onChange={this.handleChange}
                         />
                     </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_2">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_2_error}
+                            className="text_box"
+                            name="document_2"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_2"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
+                    </FormControl>
                 </div>
 
                 <div className="contestant_header_box">
@@ -822,6 +864,27 @@ class Register extends React.Component {
                             placeholder="09121111111"
                             onChange={this.handleChange}
                         />
+                    </FormControl>
+                    <FormControl margin="normal" required>
+                        <InputLabel htmlFor="document_3">Documents</InputLabel>
+                        <Input
+                            error={this.state.document_3_error}
+                            className="text_box"
+                            name="document_3"
+                            type="file"
+                            placeholder="Your documents..."
+                            onChange={this.handleFileChange}
+                        />
+                    </FormControl>
+                    <FormControl margin="normal">
+                        <div className="contestant_rule_checkbox">
+                            <Checkbox
+                                name="accept_share_info_3"
+                                color="default"
+                                onChange={this.handleCheckboxChange}
+                            />
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                        </div>
                     </FormControl>
                 </div>
 
