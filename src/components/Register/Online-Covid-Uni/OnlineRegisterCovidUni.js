@@ -530,8 +530,8 @@ class Register extends React.Component {
                     </p>
                     <p> 
                         If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br/>
-                        Email: <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a><br/>
-                        Telegram: <a href="https://t.me/ceitssc">@ceitssc</a> <br/>
+                        Email: <a href="mailto:ceaut.acpc@gmail.com">ceaut.acpc@gmail.com</a><br/>
+                        Telegram: <a href="https://t.me/acpc_admin">@acpc_admin</a> <br/>
                     </p>
                 </div>
                 <div className="team_box">
