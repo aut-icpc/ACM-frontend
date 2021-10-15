@@ -29,9 +29,9 @@ class ListOfTeamsStatus extends React.Component {
             after your registration, please inform us by:
             <br />
             Email:{" "}
-            <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a>
+            <a href="mailto:ceaut.acpc@gmail.com">ceaut.acpc@gmail.com</a>
             <br />
-            Telegram: <a href="https://t.me/ceitssc">@ceitssc</a> <br />
+            Telegram: <a href="https://t.me/acpc_admin">@acpc_admin</a> <br />
           </p>
           <div className="help-box">
             <div className="help">
