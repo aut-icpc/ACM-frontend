@@ -526,7 +526,8 @@ class Register extends React.Component {
                     </p>
                     <p>
                         Registration fees are as follows:<br/>
-                        90,000 Tomans for teams (30,000 Tomans for each contestant).
+                        60,000 Tomans for teams from Amirkabir University of Technology (20,000 Tomans for each contestant).<br/>
+                        90,000 Tomans for teams from other universities (30,000 Tomans for each contestant).
                     </p>
                     <p> 
                         If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br/>
