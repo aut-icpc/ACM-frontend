@@ -111,10 +111,10 @@ export default class RegisterMenu extends React.Component {
                     </NavLink> */}
           <NavLink
             className="nav-link"
-            onClick={() => window.scrollTo(0, 0)}
-            // onClick={() => alert("Registeration hasn't started yet.")}
+            //onClick={() => window.scrollTo(0, 0)}
+            onClick={() => alert("Registration has been Closed!")}
             exact
-            to="/onlineCovidRegisterUni"
+            //to="/onlineCovidRegisterUni"
           >
             <div
               className="register-card"
@@ -137,10 +137,10 @@ export default class RegisterMenu extends React.Component {
           </NavLink>
           <NavLink
             className="nav-link"
-            onClick={() => window.scrollTo(0, 0)}
-            // onClick={() => alert("Registeration hasn't started yet.")}
+            //onClick={() => window.scrollTo(0, 0)}
+            onClick={() => alert("Registration has been Closed!")}
             exact
-            to="/onlineCovidRegister"
+            //to="/onlineCovidRegister"
           >
             <div
               className="register-card"
