@@ -965,7 +965,7 @@ class Register extends React.Component {
                         type="submit"
                         onClick={this.onSubmit}
                     >
-                        Submit
+                        submit and payment
                     </Button>
                 </Grid>
             </form>

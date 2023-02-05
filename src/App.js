@@ -76,8 +76,8 @@ class App extends React.Component {
                 <Header changePage={this.changePage} />
                 {/* <Route exact path="/onsiteRegister" component={RegisterView} /> */}
                 {/* <Route exact path="/onlineRegister" component={OnlineRegisterView} /> */}
-                {/* <Route exact path="/onlineCovidRegister" component={OnlineRegisterCovidView} />
-                <Route exact path="/onlineCovidRegisterUni" component={OnlineRegisterCovidUniView} /> */}
+                <Route exact path="/onlineCovidRegister" component={OnlineRegisterCovidView} /> 
+                <Route exact path="/onlineCovidRegisterUni" component={OnlineRegisterCovidUniView} /> 
                 <Route exact path="/Register" component={RegisterMenu} />
                 <Route exact path="/PastResult" component={this.pastContestList} />
                 <Route exact path="/" component={this.home} />
