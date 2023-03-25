@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import "./../styles/sponsor.css"
 
+import Poster from '../../img/acm2.png';
+
 class BodyP4 extends React.Component { 
     state = {
         poster: null,
@@ -31,7 +33,8 @@ class BodyP4 extends React.Component {
             <div className="part4-container">
                  <div className="new-poster" >
                         <img 
-                            src={process.env.REACT_APP_URL + this.state.poster} 
+                            // src={process.env.REACT_APP_URL + this.state.poster} 
+                            src={Poster}
                             width="300" height="400"
                             alt="poster"
                         />
