@@ -3,6 +3,8 @@ import axios from 'axios';
 import "./../styles/sponsor.css"
 
 import Poster from '../../img/acm2.png';
+import Sponsor from '../../img/sponsor_bazar.png';
+import { Link } from 'react-router-dom';
 
 class BodyP4 extends React.Component { 
     state = {
@@ -40,15 +42,19 @@ class BodyP4 extends React.Component {
                         />
                 </div>
                 <div className="part4-inner-container">
-                    <div className="sponsor-box">
-                        <h1>Event Sponsor</h1>
+                <h1 className="sponsor-title">Event Sponsor</h1>
+                    <div>
+                        
                         <div className="line"/>
                         <div className="sponsor-image">
+                            <a href="https://cafebazaar.ir" target="_blank">
                             <img 
-                                src={process.env.REACT_APP_URL + this.state.sponsor} 
-                                width ="250" height="250"
+                                // src={process.env.REACT_APP_URL + this.state.sponsor} 
+                                src = {Sponsor}
+                                width ="350" height="250"
                                 alt="sponsor"
                             />
+                            </a>
                         </div>
                     </div>
                 </div>
