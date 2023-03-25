@@ -672,7 +672,7 @@ class Register extends React.Component {
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
                 </div>
@@ -781,7 +781,7 @@ class Register extends React.Component {
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
                 </div>
@@ -890,7 +890,7 @@ class Register extends React.Component {
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
+                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
                 </div>
@@ -965,7 +965,7 @@ class Register extends React.Component {
                         type="submit"
                         onClick={this.onSubmit}
                     >
-                        Submit
+                        submit and payment
                     </Button>
                 </Grid>
             </form>
