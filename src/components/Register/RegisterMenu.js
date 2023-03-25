@@ -135,7 +135,7 @@ export default class RegisterMenu extends React.Component {
               </div>
             </div>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             className="nav-link"
             //onClick={() => window.scrollTo(0, 0)}
             // onClick={() => alert("Registration has been Closed!")}
@@ -160,7 +160,7 @@ export default class RegisterMenu extends React.Component {
                 <p>School Students</p>
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     );
