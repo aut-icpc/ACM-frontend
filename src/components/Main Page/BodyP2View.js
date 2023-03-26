@@ -11,8 +11,8 @@ class BodyP2View extends React.Component {
         let apiUrl = process.env.REACT_APP_URL + "/api/countdowns/1"
         axios.get(apiUrl).then(res => {
             this.setState({
-                // countdowns: res.data
-                countdowns: {stopTime : "2023-04-07T09:00:00+03:30"}
+                countdowns: res.data
+                // countdowns: {stopTime : "2023-04-07T09:00:00+03:30"}
             })
         })
     }
