@@ -517,7 +517,7 @@ class Register extends React.Component {
             <form className="register_container" 
                 onSubmit={this.onSubmit}
             >                
-                <h1 className="register_page_header">Online Contest Registration</h1>
+                <h1 className="register_page_header">Contest Registration</h1>
                 <h3 className="register_page_second_header">22st Amirkabir Collegiate Programming Contest - 7th of April 2023</h3>
                 <div className="register_page_p">
                     <p>
