@@ -518,7 +518,7 @@ class Register extends React.Component {
                 onSubmit={this.onSubmit}
             >                
                 <h1 className="register_page_header">Online Contest Registration</h1>
-                <h3 className="register_page_second_header">21st Amirkabir Collegiate Programming Contest - 29th of October 2021</h3>
+                <h3 className="register_page_second_header">22st Amirkabir Collegiate Programming Contest - 7th of April 2023</h3>
                 <div className="register_page_p">
                     <p>
                         Please fill all of the following fields carefully and then press the&nbsp;
@@ -526,8 +526,8 @@ class Register extends React.Component {
                     </p>
                     <p>
                         Registration fees are as follows:<br/>
-                        60,000 Tomans for teams from Amirkabir University of Technology (20,000 Tomans for each contestant).<br/>
-                        90,000 Tomans for teams from other universities (30,000 Tomans for each contestant).
+                        120,000 Tomans for teams from Amirkabir University of Technology (40,000 Tomans for each contestant).<br/>
+                        180,000 Tomans for teams from other universities (60,000 Tomans for each contestant).
                     </p>
                     <p> 
                         If your team name was not in the registered teams list 24 hours after regitration, please inform us by:<br/>

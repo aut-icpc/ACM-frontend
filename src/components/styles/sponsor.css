@@ -74,9 +74,6 @@
     /* margin-top: 40px; */
     /* border-radius: 10px; */
 }
-.sponsor-title{
-    margin-bottom: 35px;
-}
 .sponsor-box h1 { 
     text-align: center ;
     font-size: 25px;
@@ -94,13 +91,16 @@
     transform: translate(-50% , 0);
     margin-top: -20px;
     border: 1px solid rgb(170, 159, 159); 
+    /* margin-bottom: 35px; */
    
 }
 .sponsor-image {
     position: absolute;
     left: 50% ; 
     transform: translate(-50% , 0);
-    margin-top: -80px;
+    padding-right: 30px;
+    /* margin-top: -80px; */
+    /* margin-bottom: 00px; */
     cursor: pointer;
 }
 
