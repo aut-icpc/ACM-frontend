@@ -665,16 +665,16 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
-                    <FormControl margin="normal">
+                    {/* <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
                                 name="accept_share_info_1"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
-                    </FormControl>
+                    </FormControl> */}
                 </div>
 
                 <div className="contestant_header_box">
@@ -774,16 +774,16 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
-                    <FormControl margin="normal">
+                    {/* <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
                                 name="accept_share_info_2"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
-                    </FormControl>
+                    </FormControl> */}
                 </div>
 
                 <div className="contestant_header_box">
@@ -883,16 +883,16 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
-                    <FormControl margin="normal">
+                    {/* <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
                                 name="accept_share_info_3"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
                             />
-                            {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
+                            Do you allow us to share your information with our sponser <strong>Digikala</strong>?
                         </div>
-                    </FormControl>
+                    </FormControl> */}
                 </div>
 
                 <Grid align="center">
