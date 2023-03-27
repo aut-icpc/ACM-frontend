@@ -1,16 +1,19 @@
 import React from "react"
 import axios from 'axios'
 import ListOfTeamsStatus from "./ListOfTeamsStatus"
+import Loading from "../Loading/Loading";
 
 class TimeLineContainerView extends React.Component {
     state = {
-        teams:  []
+        teams:  [],
+        loading: true
     }
 
     fetchTimeLineItems = () => {
         axios.get(process.env.REACT_APP_URL+"/api/teams/onsite").then(res => {
             this.setState({
-                teams: res.data
+                teams: res.data,
+                loading: false
             });
         });
     };
@@ -20,7 +23,10 @@ class TimeLineContainerView extends React.Component {
     }
 
     render() {
-        return (<ListOfTeamsStatus data={this.state.teams}/>)
+        if(!this.state.loading)
+            return (<ListOfTeamsStatus data={this.state.teams}/>)
+        else
+        return (<Loading/>)
     }
 }
 
