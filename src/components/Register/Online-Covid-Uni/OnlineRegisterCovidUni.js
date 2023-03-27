@@ -686,11 +686,11 @@ class Register extends React.Component {
                     
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
-                            <Checkbox
+                            {/* <Checkbox
                                 name="accept_share_info_1"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
-                            />
+                            /> */}
                             {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
@@ -813,11 +813,11 @@ class Register extends React.Component {
                     
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
-                            <Checkbox
+                            {/* <Checkbox
                                 name="accept_share_info_2"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
-                            />
+                            /> */}
                             {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
@@ -940,11 +940,11 @@ class Register extends React.Component {
                     
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
-                            <Checkbox
+                            {/* <Checkbox
                                 name="accept_share_info_3"
                                 color="default"
                                 onChange={this.handleShareInfoChange}
-                            />
+                            /> */}
                             {/* Do you allow us to share your information with our sponser <strong>Digikala</strong>? */}
                         </div>
                     </FormControl>
