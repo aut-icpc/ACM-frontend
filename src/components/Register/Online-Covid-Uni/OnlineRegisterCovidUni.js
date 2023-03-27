@@ -489,6 +489,7 @@ class Register extends React.Component {
                 // bodyFormData.append('document_1', this.state.document_1);
                 // bodyFormData.append('document_2', this.state.document_2);
                 // bodyFormData.append('document_3', this.state.document_3);
+                console.log(data)
 
                 axios({
                     url : process.env.REACT_APP_URL + "/api/register/team/onsite",
@@ -665,6 +666,24 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
+                     <FormControl margin="normal" required>
+                        <InputLabel htmlFor="shirt_size">T-shirt Size</InputLabel>
+                        <Select 
+                            error={this.state.shirt_size_1_error}
+                            className="text_box"
+                            value={this.state.shirt_size_1}
+                            onChange={this.handleChange}
+                            name="shirt_size_1"
+                        >
+                            <MenuItem value={"S"}>S</MenuItem>
+                            <MenuItem value={"M"}>M</MenuItem>
+                            <MenuItem value={"L"}>L</MenuItem>
+                            <MenuItem value={"XL"}>XL</MenuItem>
+                            <MenuItem value={"2XL"}>XXL</MenuItem>
+                            <MenuItem value={"3XL"}>XXXL</MenuItem>
+                        </Select>
+                    </FormControl>
+                    
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
@@ -774,6 +793,24 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
+                     <FormControl margin="normal" required>
+                        <InputLabel htmlFor="shirt_size">T-shirt Size</InputLabel>
+                        <Select 
+                            error={this.state.shirt_size_2_error}
+                            className="text_box"
+                            value={this.state.shirt_size_2}
+                            onChange={this.handleChange}
+                            name="shirt_size_2"
+                        >
+                            <MenuItem value={"S"}>S</MenuItem>
+                            <MenuItem value={"M"}>M</MenuItem>
+                            <MenuItem value={"L"}>L</MenuItem>
+                            <MenuItem value={"XL"}>XL</MenuItem>
+                            <MenuItem value={"2XL"}>XXL</MenuItem>
+                            <MenuItem value={"3XL"}>XXXL</MenuItem>
+                        </Select>
+                    </FormControl>
+                    
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
@@ -883,6 +920,24 @@ class Register extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </FormControl> */}
+                     <FormControl margin="normal" required>
+                        <InputLabel htmlFor="shirt_size">T-shirt Size</InputLabel>
+                        <Select 
+                            error={this.state.shirt_size_3_error}
+                            className="text_box"
+                            value={this.state.shirt_size_3}
+                            onChange={this.handleChange}
+                            name="shirt_size_3"
+                        >
+                            <MenuItem value={"S"}>S</MenuItem>
+                            <MenuItem value={"M"}>M</MenuItem>
+                            <MenuItem value={"L"}>L</MenuItem>
+                            <MenuItem value={"XL"}>XL</MenuItem>
+                            <MenuItem value={"2XL"}>XXL</MenuItem>
+                            <MenuItem value={"3XL"}>XXXL</MenuItem>
+                        </Select>
+                    </FormControl>
+                    
                     <FormControl margin="normal">
                         <div className="contestant_rule_checkbox">
                             <Checkbox
